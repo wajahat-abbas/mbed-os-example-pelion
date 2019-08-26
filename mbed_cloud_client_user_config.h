@@ -23,7 +23,12 @@
 #define MBED_CLOUD_CLIENT_TRANSPORT_MODE_TCP
 #define MBED_CLOUD_CLIENT_LIFETIME              3600
 
+#ifdef TARGET_DISCO_L475VG_IOT01A
+#define SN_COAP_MAX_BLOCKWISE_PAYLOAD_SIZE       256
+#else
 #define SN_COAP_MAX_BLOCKWISE_PAYLOAD_SIZE       512
+#endif
+
 
 /* set flag to enable update support in mbed Cloud client */
 #define MBED_CLOUD_CLIENT_SUPPORT_UPDATE
